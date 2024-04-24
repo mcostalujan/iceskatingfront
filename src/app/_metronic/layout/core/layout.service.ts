@@ -12,12 +12,13 @@ import { DarkHeaderConfig } from './configs/dark-header.config';
 import { DarkSidebarConfig } from './configs/dark-sidebar.config';
 import { LightHeaderConfig } from './configs/light-header.config';
 import { LightSidebarConfig } from './configs/light-sidebar.config';
+import { DefaulttHeaderConfig } from './configs/default-header.config';
 import { ActivatedRoute } from '@angular/router';
 
 const LAYOUT_CONFIG_LOCAL_STORAGE_KEY = `${environment.appVersion}-layoutConfig`;
 const BASE_LAYOUT_TYPE_LOCAL_STORAGE_KEY = `${environment.appVersion}-baseLayoutType`;
-const defaultBaseLayoutType: LayoutType = 'dark-sidebar';
-const defaultLayoutConfig: ILayout = DarkSidebarConfig;
+const defaultBaseLayoutType: LayoutType = 'default-header';
+const defaultLayoutConfig: ILayout = DefaulttHeaderConfig;
 
 export function getEmptyHTMLAttributes(): HTMLAttributesType {
   return {
@@ -128,25 +129,26 @@ export class LayoutService {
   }
 
   getBaseLayoutTypeFromRouteOrLocalStorage(): LayoutType {
-    const routeData = this.activatedRoute?.firstChild?.snapshot?.data;
-    if (routeData && routeData.layout) {
-      return routeData.layout as LayoutType;
-    }
+    // const routeData = this.activatedRoute?.firstChild?.snapshot?.data;
+    // if (routeData && routeData.layout) {
+    //   return routeData.layout as LayoutType;
+    // }
 
-    return this.getBaseLayoutTypeFromLocalStorage();
+    // return this.getBaseLayoutTypeFromLocalStorage();
+    return defaultBaseLayoutType;
   }
 
   getBaseLayoutTypeFromLocalStorage(): LayoutType {
-    if (localStorage) {
-      const layoutType = localStorage.getItem(
-        BASE_LAYOUT_TYPE_LOCAL_STORAGE_KEY
-      );
-      if (layoutType) {
-        return layoutType as LayoutType;
-      }
+    // if (localStorage) {
+    //   const layoutType = localStorage.getItem(
+    //     BASE_LAYOUT_TYPE_LOCAL_STORAGE_KEY
+    //   );
+    //   if (layoutType) {
+    //     return layoutType as LayoutType;
+    //   }
 
-      this.setBaseLayoutType(defaultBaseLayoutType);
-    }
+    //   this.setBaseLayoutType(defaultBaseLayoutType);
+    // }
     return defaultBaseLayoutType;
   }
 
@@ -166,7 +168,8 @@ export class LayoutService {
   }
 
   getLayoutConfig(layoutType: LayoutType): ILayout {
-    const storedLayoutType = this.getBaseLayoutTypeFromLocalStorage();
+    // const storedLayoutType = this.getBaseLayoutTypeFromLocalStorage();
+    const storedLayoutType = defaultBaseLayoutType;
     if (layoutType && storedLayoutType) {
       const configInString = localStorage.getItem(
         `${layoutType}-${LAYOUT_CONFIG_LOCAL_STORAGE_KEY}`
@@ -197,7 +200,8 @@ export class LayoutService {
   }
 
   saveBaseConfig(config: ILayout) {
-    const baseLayoutType = this.getBaseLayoutTypeFromLocalStorage();
+    // const baseLayoutType = this.getBaseLayoutTypeFromLocalStorage();
+    const baseLayoutType = defaultBaseLayoutType;
     if (localStorage) {
       localStorage.setItem(
         `${baseLayoutType}-${LAYOUT_CONFIG_LOCAL_STORAGE_KEY}`,
@@ -209,7 +213,8 @@ export class LayoutService {
   }
 
   resetBaseConfig() {
-    const layoutType = this.getBaseLayoutTypeFromLocalStorage;
+    // const layoutType = this.getBaseLayoutTypeFromLocalStorage;
+    const layoutType = defaultBaseLayoutType;;
 
     if (localStorage) {
       localStorage.removeItem(
