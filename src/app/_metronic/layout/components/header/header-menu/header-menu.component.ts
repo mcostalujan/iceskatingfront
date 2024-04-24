@@ -7,7 +7,19 @@ import { LayoutService } from '../../../core/layout.service';
 @Component({
   selector: 'app-header-menu',
   templateUrl: './header-menu.component.html',
-  styleUrls: ['./header-menu.component.scss'],
+  styleUrls: ['./header-menu.component.scss',
+  '../../../../../../assets/css/style.css',
+  '../../../../../../assets/css/bootstrap.css',
+  '../../../../../../assets/css/dark.css',
+  '../../../../../../assets/css/font-icons.css',
+  '../../../../../../assets/css/animate.css',
+  '../../../../../../assets/css/magnific-popup.css',
+  '../../../../../../assets/css/custom.css',
+  '../../../../../../assets/include/rs-plugin/css/settings.css',
+  '../../../../../../assets/include/rs-plugin/css/layers.css',
+  '../../../../../../assets/include/rs-plugin/css/navigation.css',
+
+],
 })
 export class HeaderMenuComponent implements OnInit {
   constructor(private router: Router, private layout: LayoutService, private layoutInit: LayoutInitService) {}

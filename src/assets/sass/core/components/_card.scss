@@ -3,7 +3,7 @@
 //
 
 // Base
-.card {    
+.card {
     --#{$prefix}card-box-shadow: var(--#{$prefix}root-card-box-shadow);
     --#{$prefix}card-border-color: var(--#{$prefix}root-card-border-color);
 
@@ -11,7 +11,7 @@
         border: $card-border-width $card-border-style var(--#{$prefix}card-border-color);
     } @else {
         border: 0;
-    }  
+    }
 
     // Header
     .card-header {
@@ -168,7 +168,7 @@
             border-top: 0 !important;
         }
     }
-    
+
     // Enable shadow
     &.card-shadow {
         box-shadow: var(--#{$prefix}card-box-shadow);
@@ -245,7 +245,7 @@
                 padding-top: 0 !important;
                 padding-bottom: 0 !important;
                 align-items: stretch;
-    
+
                 .card-toolbar {
                     margin: 0;
                     align-items: stretch;

@@ -3,7 +3,6 @@ export type LayoutType =
   | 'light-sidebar'
   | 'dark-header'
   | 'light-header'
-  | 'default-header'
   ;
 
 export type CSSClassesType = {

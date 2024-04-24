@@ -12,13 +12,12 @@ import { DarkHeaderConfig } from './configs/dark-header.config';
 import { DarkSidebarConfig } from './configs/dark-sidebar.config';
 import { LightHeaderConfig } from './configs/light-header.config';
 import { LightSidebarConfig } from './configs/light-sidebar.config';
-import { DefaulttHeaderConfig } from './configs/default-header.config';
 import { ActivatedRoute } from '@angular/router';
 
 const LAYOUT_CONFIG_LOCAL_STORAGE_KEY = `${environment.appVersion}-layoutConfig`;
 const BASE_LAYOUT_TYPE_LOCAL_STORAGE_KEY = `${environment.appVersion}-baseLayoutType`;
-const defaultBaseLayoutType: LayoutType = 'default-header';
-const defaultLayoutConfig: ILayout = DefaulttHeaderConfig;
+const defaultBaseLayoutType: LayoutType = 'dark-header';
+const defaultLayoutConfig: ILayout = DarkHeaderConfig;
 
 export function getEmptyHTMLAttributes(): HTMLAttributesType {
   return {

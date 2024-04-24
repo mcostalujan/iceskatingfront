@@ -14,7 +14,18 @@ import { ILayout, LayoutType } from './core/configs/config';
 @Component({
   selector: 'app-layout',
   templateUrl: './layout.component.html',
-  styleUrls: ['./layout.component.scss'],
+  styleUrls: ['./layout.component.scss',
+  '../../../assets/css/style.css',
+  '../../../assets/css/bootstrap.css',
+  '../../../assets/css/dark.css',
+  '../../../assets/css/font-icons.css',
+  '../../../assets/css/animate.css',
+  '../../../assets/css/magnific-popup.css',
+  '../../../assets/css/custom.css',
+  '../../../assets/include/rs-plugin/css/settings.css',
+  '../../../assets/include/rs-plugin/css/layers.css',
+  '../../../assets/include/rs-plugin/css/navigation.css',
+],
 })
 export class LayoutComponent implements OnInit, OnDestroy {
   private unsubscribe: Subscription[] = [];
