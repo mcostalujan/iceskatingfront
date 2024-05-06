@@ -15,6 +15,7 @@ import { ILayout, LayoutType } from './core/configs/config';
   selector: 'app-layout',
   templateUrl: './layout.component.html',
   styleUrls: ['./layout.component.scss',
+  './layout.component.css',
   '../../../assets/css/style.css',
   '../../../assets/css/bootstrap.css',
   '../../../assets/css/dark.css',
